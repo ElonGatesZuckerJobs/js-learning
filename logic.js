@@ -117,3 +117,62 @@ if (browser == "edge") {
 
 
 // ---------------------------------------------------
+
+// Exercise 1 - (https://replit.com/@OdinProject/troubleshooting#troubleshooting.js)
+
+const a = 1;
+const b = 1;
+
+let result = a + b;
+
+if(result === 2) {
+	console.log(`a + b é igual a ${result}`);
+} else if(typeof result === 'number') {
+	console.log(`You returned the number ${result}, the result should be the number 2`);
+} else {
+	console.log(`You returned string "${result}", the result should be the number 2`);
+}
+
+// ---------------------------------------------------
+
+// Exercise 2 - (https://replit.com/@OdinProject/enter-a-number#script.js)
+
+// ---------------------------------------------------
+
+// Exercise 3 - (https://replit.com/@OdinProject/lets-do-some-math#math.js)
+
+const v = 1 + 8
+const w = 22 * 3
+const x = 5 % 4
+const y =  - 17
+const z = v+ w + x + y
+
+console.log(v)
+console.log(w)
+console.log(x)
+console.log(y)
+console.log(z)
+// ---------------------------------------------------
+
+// Exercise 4 - (https://replit.com/@OdinProject/direction-follow#follow.js)
+
+const firstName = "Carlos";
+const lastName = "Stevenson";
+
+const fullName = firstName + " " + lastName;
+
+const thisYear = 1965;
+const birthYear = 1948;
+
+const age = thisYear - birthYear
+
+// First part:
+const firstGreeting = (`Hello! My name is ${firstName} ${lastName} and I am ${thisYear - birthYear} years old.`);
+
+// Second part:
+const secondGreeting = (`Hello! My name is ${fullName} and I am ${age} years old.`)
+
+console.log(firstGreeting);
+console.log(secondGreeting);
+
+// ---------------------------------------------------
