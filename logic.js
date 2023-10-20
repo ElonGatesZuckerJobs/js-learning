@@ -225,6 +225,6 @@ console.log(genericText.replace("My", "Your"));
 const anotherGenericText = "Word, word and word";
 
 console.log(anotherGenericText.replace("word", "what"));
-// Mudou apenas o primeiro valor igual ("word").
+// Mudou apenas o primeiro valor igual ("word") para "what".
 
 // ---------------------------------------------------
