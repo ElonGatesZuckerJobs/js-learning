@@ -11,13 +11,11 @@ if (hour >= 0 && hour <= 1200) {            // Se a primeira condição ('hora' 
 
 // ---------------------------------------------------
 
-taxa = 1
+randomNumber = 3;
 
-console.log("A taxa é de R$" + (taxa ? 2 : 10) );
-// Se o valor da variável 'taxa' for 0, undefined ou null, ele retorna 2.
-// Se for qualquer outro valor ele retorna 10.
-
-// Não entendi exatamente como funciona essa condição.
+console.log("The answer is well known: " + (randomNumber ? "Wrong" : 42) );
+// Se o valor da variável 'randomNumber' for 0, undefined ou null, ele retorna "Wrong".
+// Se for qualquer outro valor (verdadeiro) ele retorna 42.
 
 // ---------------------------------------------------
 
@@ -28,13 +26,15 @@ console.log("A taxa é de R$" + (taxa ? 2 : 10) );
 
 // A precedência de && é maior que ||
 
-// alert( null || 2 && 3 || 4 );
+console.log( null || 4 && 11 || 4 ); // 11
 
 // Primeiro ele faz "2 && 3"
 
 // ---------------------------------------------------
 
-const matrix = [                         // Um array (matriz?) com dois arrays dentro.
+// Um array com dois arrays dentro (uma matriz?).
+
+const matrix = [
   [1, 2, 3, 4, 5, 6, 7, 8, 9],
   [10, 20, 30, 40, 50, 60, 70, 80, 90],
 ]
@@ -45,25 +45,25 @@ console.log(matrix[1][5]) // 60
 
 // ---------------------------------------------------
 
-const ar = [
+const animals = [
   "cavalo", "cachorro", "aranha", "ovelha"
 ]
 
-ar.push("macaco") // Adiciona um item no final (do array)
+animals.push("macaco") // Adiciona um item no final (do array)
 
-console.log(ar)
+console.log(animals)
 
-ar.unshift("borboleta") // Adiciona um item no começo
+animals.unshift("borboleta") // Adiciona um item no começo
 
-console.log(ar)
+console.log(animals)
 
-ar.pop() // Remove o último item
+animals.pop() // Remove o último item
 
-console.log(ar)
+console.log(animals)
 
-ar.shift() // Remove o primeiro item
+animals.shift() // Remove o primeiro item
 
-console.log(ar)
+console.log(animals)
 
 // ---------------------------------------------------
 
@@ -174,5 +174,57 @@ const secondGreeting = (`Hello! My name is ${fullName} and I am ${age} years old
 
 console.log(firstGreeting);
 console.log(secondGreeting);
+
+// ---------------------------------------------------
+
+const n1 = (Math.random()); // 'Math.random' gera um número aleatório.
+const n2 = (Math.random() * 100);
+const n3 = (Math.random() * 100);
+
+console.log(n1); // 'Math.round' arredonda os números.
+console.log(Math.round(n2));
+console.log(Math.round(n3)); 
+
+// ---------------------------------------------------
+
+const harryPotterArray = ["I", "love", "chocolate", "frogs"];
+
+const dafaultJoin = harryPotterArray.join(); // Por padrão '.join' junta os items com uma vírgula.
+
+const customJoin = harryPotterArray.join(" | ");
+
+console.log(harryPotterArray);
+console.log(dafaultJoin);
+console.log(customJoin);
+
+// ---------------------------------------------------
+
+function hiFunction(name = "Dave") {
+  console.log(`Hi ${name}!`);
+}
+
+googleCoFounder = "Larry";
+
+hiFunction(googleCoFounder); // Hi Larry!
+hiFunction("Brian"); // Hi Brian!
+hiFunction(); // Hi Dave!
+
+// ---------------------------------------------------
+
+// Replace
+
+const genericText = "My name is Jordan Belfort";
+
+console.log(genericText);
+console.log(genericText.replace("My", "Your"));
+/* 
+  Muda a primeira palavra que for igual a "true" (nesse caso "My"),
+  para a segunda palavra dentro de 'replace' ("Your").
+*/
+
+const anotherGenericText = "Word, word and word";
+
+console.log(anotherGenericText.replace("word", "what"));
+// Mudou apenas o primeiro valor igual ("word").
 
 // ---------------------------------------------------
