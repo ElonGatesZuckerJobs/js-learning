@@ -1,3 +1,4 @@
+// Observação: As notas podem ser (e provavelmente são :) confusas. Estou trabalhando nisso.
 
 hour = 2400;
 
@@ -9,7 +10,7 @@ if (hour >= 0 && hour <= 1200) {            // Se a primeira condição ('hora' 
   console.log("What planet are you?") 
 }
 
-// ---------------------------------------------------
+// ------------------------------------------
 
 randomNumber = 3;
 
@@ -17,7 +18,7 @@ console.log("The answer is well known: " + (randomNumber ? "Wrong" : 42) );
 // Se o valor da variável 'randomNumber' for 0, undefined ou null, ele retorna "Wrong".
 // Se for qualquer outro valor (verdadeiro) ele retorna 42.
 
-// ---------------------------------------------------
+// ------------------------------------------
 
 //   ||   (OR)
 //   &&   (AND)
@@ -30,7 +31,7 @@ console.log( null || 4 && 11 || 4 ); // 11
 
 // Primeiro ele faz "2 && 3"
 
-// ---------------------------------------------------
+// ------------------------------------------
 
 // Um array com dois arrays dentro (uma matriz?).
 
@@ -43,7 +44,9 @@ console.log(matrix[0][0]) // 1
 console.log(matrix[0][8]) // 9
 console.log(matrix[1][5]) // 60
 
-// ---------------------------------------------------
+// ------------------------------------------
+
+// Manipulando um array
 
 const animals = [
   "cavalo", "cachorro", "aranha", "ovelha"
@@ -65,7 +68,27 @@ animals.shift() // Remove o primeiro item
 
 console.log(animals)
 
-// ---------------------------------------------------
+// ------------------------------------------
+
+// .replace
+
+const genericText = "My name is Jordan Belfort";
+
+console.log(genericText);
+console.log(genericText.replace("My", "Your"));
+/* 
+  Muda a primeira palavra que for igual a "true" (nesse caso "My"),
+  para a segunda palavra dentro de 'replace' ("Your").
+*/
+
+const anotherGenericText = "Word, word and word";
+
+console.log(anotherGenericText.replace("word", "what"));
+// Mudou apenas o primeiro valor igual ("word") para "what".
+
+// ------------------------------------------
+
+// .find
 
 trials = [
   1, 3, 5, 9, 11, 17, 32
@@ -79,7 +102,7 @@ console.log(bad)
 
 // find retorna o primeiro valor que for verdadeiro, caso contrário 'undefined'.
 
-// ---------------------------------------------------
+// ------------------------------------------
 
 // SWITCH
 
@@ -87,18 +110,18 @@ let number = 2;
 
 switch (number) {
   case 2: 
-    console.log(`Seu número é ${number}`);
+    console.log(`Your number is ${number}`);
     break;
   case 3:
-    console.log(`${number} é demais`);
+    console.log(`${number} is too much`);
     break;
   default:
-    console.log("Você quebrou a Matrix");
+    console.log("You broke the Matrix");
 }
 
 // IF
 
-const browser = "";
+const browser = "chrome";
 
 if (browser == "edge") {
   console.log("You are in the edge");
@@ -116,7 +139,7 @@ if (browser == "edge") {
 // Em seguida, ele avalia "safari" e "opera", que são sempre verdadeiros porque são strings não vazias.
 
 
-// ---------------------------------------------------
+// ------------------------------------------
 
 // Exercise 1 - (https://replit.com/@OdinProject/troubleshooting#troubleshooting.js)
 
@@ -133,11 +156,11 @@ if(result === 2) {
 	console.log(`You returned string "${result}", the result should be the number 2`);
 }
 
-// ---------------------------------------------------
+// ------------------------------------------
 
 // Exercise 2 - (https://replit.com/@OdinProject/enter-a-number#script.js)
 
-// ---------------------------------------------------
+// ------------------------------------------
 
 // Exercise 3 - (https://replit.com/@OdinProject/lets-do-some-math#math.js)
 
@@ -152,7 +175,7 @@ console.log(w)
 console.log(x)
 console.log(y)
 console.log(z)
-// ---------------------------------------------------
+// ------------------------------------------
 
 // Exercise 4 - (https://replit.com/@OdinProject/direction-follow#follow.js)
 
@@ -175,7 +198,7 @@ const secondGreeting = (`Hello! My name is ${fullName} and I am ${age} years old
 console.log(firstGreeting);
 console.log(secondGreeting);
 
-// ---------------------------------------------------
+// ------------------------------------------
 
 const n1 = (Math.random()); // 'Math.random' gera um número aleatório.
 const n2 = (Math.random() * 100);
@@ -185,7 +208,7 @@ console.log(n1); // 'Math.round' arredonda os números.
 console.log(Math.round(n2));
 console.log(Math.round(n3)); 
 
-// ---------------------------------------------------
+// ------------------------------------------
 
 const harryPotterArray = ["I", "love", "chocolate", "frogs"];
 
@@ -197,7 +220,18 @@ console.log(harryPotterArray);
 console.log(dafaultJoin);
 console.log(customJoin);
 
-// ---------------------------------------------------
+// ------------------------------------------
+
+// Funções
+
+/*
+  Estrutura:
+
+function functionName(parameterA, paremeterB...) {
+  "function body"
+}
+
+*/
 
 function hiFunction(name = "Dave") {
   console.log(`Hi ${name}!`);
@@ -209,22 +243,89 @@ hiFunction(googleCoFounder); // Hi Larry!
 hiFunction("Brian"); // Hi Brian!
 hiFunction(); // Hi Dave!
 
-// ---------------------------------------------------
+// -----
 
-// Replace
+// As variáveis que ficam dentro do parênteses da função são chamados de *parâmetros*.
+// São variáveis inexistentes que receberão um valor.
 
-const genericText = "My name is Jordan Belfort";
+function genericFunction(pA, pB = "Default text") {
+  functionMessage = (`Parameter A = "${pA}" and parameter B = "${pB}"`);
 
-console.log(genericText);
-console.log(genericText.replace("My", "Your"));
+  console.log(functionMessage);
+};
+
+genericFunction("aaa! (scream)", "blah"); // Os dois valores dentro do parênteses são chamados de *argumentos*.
+
+genericFunction("First value");
+// Se a função não receber argumentos "suficientes", o segundo valor (nesse caso pB),
+// receberá "undefined".
+
+// Valor padrão caso não receba dois 
+
+function defaultValueExample(favoriteMovie, secondFavoriteMovie = "I can't decide") {
+  
+  greatMovies = (`My favorite movie is ${favoriteMovie}, and my second favorite movie is: ${secondFavoriteMovie}.`);
+
+  console.log(greatMovies);
+};
+
+defaultValueExample("Interstellar", "Joker"); // Normal function
+defaultValueExample("Interstellar"); // Se nenhum valor for fornecido para o segundo parâmetro ('secondFavoriteMovie'),
+// ele receberá o valor padrão "I can't decide" (definido aqui: 'secondFavoriteMovie = "I can't decide"').
+
+
 /* 
-  Muda a primeira palavra que for igual a "true" (nesse caso "My"),
-  para a segunda palavra dentro de 'replace' ("Your").
+  Obs: o Valor padrão pode ser outra função. Exemplo: 
+
+  function showMessage(from, text) {
+    if (text === undefined) {
+      text = 'no text given';
+    }
+
+    alert( from + ": " + text );
+  }
+
 */
 
-const anotherGenericText = "Word, word and word";
+// ------------------------------------------
 
-console.log(anotherGenericText.replace("word", "what"));
-// Mudou apenas o primeiro valor igual ("word") para "what".
+// Funções podem retornar todos os tipos de valores existentes, incluindo tipos primitivos, objetos, arrays e até mesmo outras funções.
 
-// ---------------------------------------------------
+// Exemplo usando função, 'return' e condição.
+
+function checkAge(localAge) {
+  if (localAge >= 18) {
+    return true;
+  } else {
+    return confirm('Do you have permission from your parents?');
+  }
+}
+
+let globalAge = prompt("How old are you?"); 
+// Outputs que estão relacionados à idade terão "[age]" no começo. 
+
+if (checkAge(globalAge)) {
+  console.log("[age] Do you REALLY have 18 or more?");
+} else {
+  console.log("[age] What are you doing here?");
+}
+
+// Movie recommendation
+
+function cinema(movieAgeChecker) {
+  if (movieAgeChecker > 0 && movieAgeChecker <= 17) {
+    return("You'll probably like Minions")
+  } else if (movieAgeChecker >= 18 && movieAgeChecker <= 100) {
+    return("You may like Fight Club or Blade Runner");
+  } else if (movieAgeChecker > 100) {
+    return("May you like A Trip to the Moon and Citizen Kane");
+  } else {
+    return("What are you?")
+  }
+};
+
+// cinema(prompt("How old are you? \nChoose and i'll recommend a movie (at the console...)."));
+
+console.log(`[age] Movie recommendation: ${cinema(globalAge)}`);
+
+// ------------------------------------------
