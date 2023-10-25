@@ -260,8 +260,6 @@ genericFunction("First value");
 // Se a função não receber argumentos "suficientes", o segundo valor (nesse caso pB),
 // receberá "undefined".
 
-// Valor padrão caso não receba dois 
-
 function defaultValueExample(favoriteMovie, secondFavoriteMovie = "I can't decide") {
   
   greatMovies = (`My favorite movie is ${favoriteMovie}, and my second favorite movie is: ${secondFavoriteMovie}.`);
@@ -291,7 +289,7 @@ defaultValueExample("Interstellar"); // Se nenhum valor for fornecido para o seg
 
 // Funções podem retornar todos os tipos de valores existentes, incluindo tipos primitivos, objetos, arrays e até mesmo outras funções.
 
-// Exemplo usando função, 'return' e condição.
+// Função com 'return' e condição:
 
 function checkAge(localAge) {
   if (localAge >= 18) {
@@ -301,8 +299,14 @@ function checkAge(localAge) {
   }
 }
 
-let globalAge = prompt("How old are you?"); 
-// Outputs que estão relacionados à idade terão "[age]" no começo. 
+let globalAge = 18; 
+/* 
+  Idade com valor fixo para não atrapalhar os testes, 
+  mas poderia ser um prompt. Exemplo: 'let globalAge = prompt("How old are you?");'
+*/ 
+
+
+// Obs: Outputs que estão relacionados à idade terão "[age]" no começo. 
 
 if (checkAge(globalAge)) {
   console.log("[age] Do you REALLY have 18 or more?");
@@ -327,5 +331,74 @@ function cinema(movieAgeChecker) {
 // cinema(prompt("How old are you? \nChoose and i'll recommend a movie (at the console...)."));
 
 console.log(`[age] Movie recommendation: ${cinema(globalAge)}`);
+
+// ------------------------------------------
+
+// Odin Project Exercises (https://www.theodinproject.com/lessons/foundations-fundamentals-part-3#assignment)
+ 
+function add7(number) {
+  sum = number + 7;
+
+  console.log(sum);
+};
+
+add7(3);
+
+// ---
+
+function multiply(numberOne, numberTwo) {
+  mult = numberOne * numberTwo;
+    
+  console.log(mult);
+};
+
+multiply(6, 7);
+
+// ---
+
+function capitalization(word) {
+  firstLetter = word.slice(0, 1);
+  high = firstLetter.toUpperCase();
+
+  console.log(word);
+  console.log(firstLetter);
+  console.log(high);
+}
+
+capitalization("not random word"); // N
+capitalization("other word"); // O
+
+// ---
+
+function lastLetter(anotherWord) {
+  let last = anotherWord.slice(anotherWord.length -1);
+
+  console.log(last);
+}
+
+lastLetter("abcd");
+
+// ------------------------------------------
+
+// Que tipo função usar?
+
+/*
+  Funções Nomeadas (Declaradas)
+  - São ideais para funções que precisam ser chamadas recursivamente.
+
+  Exemplo:
+    function calcularSoma(a, b) {
+      return a + b;
+    }
+*/
+/*
+  Funções Anônimas
+  - Use funções anônimas quando você precisa de uma função temporária ou de curta duração que é usada apenas em um contexto específico.
+
+  Exemplo:
+    const soma = function(a, b) {
+      return a + b;
+    };
+*/
 
 // ------------------------------------------
